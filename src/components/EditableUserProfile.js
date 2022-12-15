@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Group from './Group';
 import { months, calcButtonTextColor } from '../tools';
+import React, { Component } from 'react';
 
 function renderMonthOptions() {
     return months.getMonths().map( (m, i) => {

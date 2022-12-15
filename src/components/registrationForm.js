@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import EditableUserProfile from './EditableUserProfile';
 import './style.css'
+import {useNavigate} from 'react-router-dom';
+
 function RegistrationForm() {
     const [UserName, setUserName] = useState(null);
     const [DisplayName, setDisplayName] = useState(null);
@@ -9,6 +11,8 @@ function RegistrationForm() {
     const [email, setEmail] = useState(null);
     const [password,setPassword] = useState(null);
     const [confirmPassword,setConfirmPassword] = useState(null);
+    const navigate = useNavigate();
+
     function inputtypehandler(event){
         let{id,value}=event.target
         console.log(id,value)
@@ -42,6 +46,8 @@ function RegistrationForm() {
         console.log(email)
         console.log(password)
         console.log(confirmPassword)
+        // const navigate = useNavigate();
+        navigate('/', {replace: true});
         }
     return(
       <div className="form">
@@ -77,6 +83,7 @@ function RegistrationForm() {
           </div>
           <div class="footer">
               <button onClick={register} type="submit" class="btn">Register</button>
+
           </div>
       </div> 
  
